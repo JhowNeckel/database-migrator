@@ -2,7 +2,7 @@ from fab_migration import Migration
 import yaml
 
 
-def parse(string):
+def migration_parser(string):
     migration = yaml.load(string)
 
     return Migration(
