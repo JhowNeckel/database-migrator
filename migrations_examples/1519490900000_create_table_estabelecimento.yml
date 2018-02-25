@@ -1,0 +1,10 @@
+description: Create table estabelecimento
+authored_at: 1519490900000
+up: "CREATE TABLE IF NOT EXISTS estabelecimento (
+      id UUID PRIMARY KEY,
+      nome text,
+      nome_fantasia text,
+      cnpj text,
+      site text
+    )"
+down: "DROP TABLE IF EXISTS estabelecimento"

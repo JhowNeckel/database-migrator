@@ -1,0 +1,8 @@
+description: Create table telefone
+authored_at: 1519491828000
+up: "CREATE TABLE IF NOT EXISTS telefone (
+      id UUID PRIMARY KEY,
+      numero text,
+      proprietarioid UUID
+    )"
+down: "DROP TABLE IF EXISTS telefone"

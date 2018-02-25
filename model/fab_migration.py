@@ -1,4 +1,4 @@
-from database_migrator import execute_query, apply_migration, remove_migration, atual_position
+from bin.database_migrator import execute_query, apply_migration, remove_migration, atual_position
 import time
 
 

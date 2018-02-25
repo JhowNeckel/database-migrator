@@ -1,0 +1,9 @@
+description: Create table empresa
+authored_at: 1519491752000
+up: "CREATE TABLE IF NOT EXISTS empresa (
+      id UUID PRIMARY KEY,
+      nome text,
+      nome_fantasia text,
+      cnpj text
+    )"
+down: "DROP TABLE IF EXISTS empresa"

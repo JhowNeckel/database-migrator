@@ -1,8 +1,8 @@
-from migration_parser import migration_parser
+from util.migration_utils import migration_parser
 import argparse
 import os
 
-directory = '/home/jhonatan/projects/migrations'
+directory = 'migrations_examples'
 
 
 def order_migrations(operation):

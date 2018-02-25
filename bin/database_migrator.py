@@ -1,6 +1,6 @@
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
-import time
+from util import migration_utils
 
 host = ['172.17.0.3']
 auth = PlainTextAuthProvider(username='cassandra', password='cassandra')
@@ -37,18 +37,10 @@ def remove_migration(authoredat, description):
     execute_query(query)
 
 
-def date_to_timestamp(date):
-    return (int(time.mktime(time.strptime(str(date), '%Y-%m-%d %H:%M:%S'))) - time.timezone) * 1000
-
-
 def atual_position():
     create_migration_table()
     query = "SELECT * FROM applied_migrations"
     rows = session.execute(query)
     rows.current_rows.sort(reverse=True)
     data = rows.current_rows.pop(0) if rows.current_rows.__len__() != 0 else None
-    return date_to_timestamp(data.authored_at) if data is not None else 0
-
-
-if __name__ == '__main__':
-    print(atual_position())
+    return migration_utils.date_to_timestamp(data.authored_at) if data is not None else 0

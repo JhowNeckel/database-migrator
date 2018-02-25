@@ -1,4 +1,5 @@
-from fab_migration import Migration
+from model.fab_migration import Migration
+import time
 import yaml
 
 
@@ -11,3 +12,7 @@ def migration_parser(string):
         migration.get("up"),
         migration.get("down")
     )
+
+
+def date_to_timestamp(date):
+    return (int(time.mktime(time.strptime(str(date), '%Y-%m-%d %H:%M:%S'))) - time.timezone) * 1000

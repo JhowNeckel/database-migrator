@@ -1,0 +1,14 @@
+description: Create table usuario
+authored_at: 1519483529000
+up: "CREATE TABLE IF NOT EXISTS usuario (
+      id UUID PRIMARY KEY,
+      nome text,
+      sobrenome text,
+      nascimento timestamp,
+      email text
+    )"
+down: "DROP TABLE IF EXISTS usuario"
+
+
+
+# query = "INSERT INTO usuario (id, nome, sobrenome, nascimento, email) VALUES (%s, %s, %s, %s, %s)" % ()
